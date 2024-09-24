@@ -1,0 +1,280 @@
+<html></html>
+<head>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="10219080_curriculum_vitae_cv_portofolio_resume_icon.png" type="image/png">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #0d0d0d;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+           
+        }
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #0d0d0d;
+            animation: shine 2s infinite;
+        }
+        @keyframes shine {
+            0% {
+                background-color: #0d0d0d;
+            }
+            50% {
+                background-color: #141414;
+            }
+            100% {
+                background-color: #0d0d0d;
+            }
+        }
+        .navbar .logo {
+            font-size: 1.2em;
+            color: #eec857;
+            margin-left: 50px;
+            animation: glow 2s infinite;
+        }
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #eec857;
+            }
+            50% {
+                text-shadow: 0 0 20px #eec857;
+            }
+            100% {
+                text-shadow: 0 0 10px #eec857;
+            }
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1em;
+            position: relative;
+            padding: 10px;
+            animation: fade-in 2s;
+            transition: all 0.3s ease;
+        }
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .navbar .menu a:hover {
+            color: #eec857;
+            text-shadow: 0 0 10px #eec857;
+        }
+        .navbar .menu a:hover::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #f5c32c;
+            bottom: -5px;
+            left: 0;
+        }
+        .navbar .github {
+            font-size: 1.5em;
+            color: #ffffff;
+            margin-right: 20px;
+            animation: spin 2s infinite;
+        }
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+       
+        @media (max-width: 768px) {
+            body {
+                overflow: hidden;
+            }
+           
+            .navbar .menu {
+                gap: 1px;
+            }
+ 
+            .navbar .logo {
+                font-size: 1em;
+                margin-left: 10px;
+            }
+            .navbar .menu a {
+                font-size: 0.9em;
+            }
+
+            
+        }
+
+        .about-section {
+            display: flex;
+            justify-content: center;
+            padding: 50px 20px;
+            margin-top: 700px;
+        }
+        .about-card {
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .about-card img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+        }
+        .about-card h2 {
+            margin-top: 20px;
+            font-size: 36px;
+            color: #f0c674;
+        }
+        .about-card p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        .skills-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .skills-section h2 {
+            font-size: 36px;
+            color: #f0c674;
+        }
+        .skills-section .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .skills-section .tabs div {
+            margin: 0 10px;
+            padding: 10px 20px;
+            border: 1px solid #f0c674;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .skills-section .tabs .active {
+            background-color: #f0c674;
+            color: #1a1a1a;
+        }
+        .skills-section .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .skills-section .skills .skill {
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #f0c674;
+            border-radius: 5px;
+            width: 150px;
+            text-align: center;
+        }
+        .skills-section .skills .skill i {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"> <b> Nopal :]</b></div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Blog</a>
+        </div>
+        <div class="github">
+            <i class="fab fa-github"></i>
+        </div>
+    </div>
+    <div class="about-section">
+        <div class="about-card">
+         <img alt="Cartoon image of a person with glasses and a blue scarf" height="200" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-BVbpSZmLndA7MfHIxv2ahIKS/user-IBY8IaMXtVn7IVIdZeyvjx16/img-OZypCSlrjiXNrvBoc2xrvoRy.png?st=2024-09-24T12%3A00%3A55Z&amp;se=2024-09-24T14%3A00%3A55Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-23T23%3A18%3A52Z&amp;ske=2024-09-24T23%3A18%3A52Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=2NayStYaZ4nRetsJF7cXXK2fGa6ZHY1q42cgTqrIZwg%3D" width="200"/>
+         <h2>
+          About Me
+         </h2>
+         <p>
+          Hi everyone! My name is Bagas Rakha Putra, I'm a web developer from Bogor, West Java. I have 1 year of experience in back-end web development. I really enjoy what I do right now, in my opinion, creating programs is not just a job, but also an art that has aesthetic value.
+         </p>
+         <p>
+          My job is to build your website to be functional and user-friendly yet still attractive. In addition, I provide a personal touch to your product and ensure that the website catches attention and is easy to use. My goal is to convey your message and identity in the most creative way. If you are interested in hiring me, please contact the listed contact.
+         </p>
+        </div>
+       </div>
+       <div class="skills-section">
+        <h2>
+         Skills
+        </h2>
+        <div class="tabs">
+         <div>
+          Tech Stack
+         </div>
+         <div class="active">
+          Tools
+         </div>
+        </div>
+        <div class="skills">
+         <div class="skill">
+          <i class="fab fa-git-alt">
+          </i>
+          <p>
+           Git
+          </p>
+         </div>
+         <div class="skill">
+          <i class="fab fa-github">
+          </i>
+          <p>
+           GitHub
+          </p>
+         </div>
+         <div class="skill">
+          <i class="fab fa-npm">
+          </i>
+          <p>
+           NPM
+          </p>
+         </div>
+         <div class="skill">
+          <i class="fas fa-database">
+          </i>
+          <p>
+           MySQL
+          </p>
+         </div>
+        </div>
+       </div>
+   
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+</body>
+</html>
