@@ -1,0 +1,129 @@
+<html>
+<head>
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="10219080_curriculum_vitae_cv_portofolio_resume_icon.png" type="image/png">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #0d0d0d;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #0d0d0d;
+        }
+        .navbar .logo {
+            font-size: 1.2em;
+            color: #eec857;
+            margin-left: 50px; /* Menambahkan margin kiri untuk memindahkan logo lebih ke kanan */
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1em;
+            position: relative;
+            padding: 10px; /* Add some padding to the menu items */
+        }
+        .navbar .menu a:hover::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #f5c32c;
+            bottom: -5px;
+            left: 0;
+        }
+        .navbar .github {
+            font-size: 1.5em;
+            color: #ffffff;
+            margin-right: 20px; /* Menambahkan margin kanan untuk memindahkan ikon GitHub lebih ke kiri */
+        }
+        .content {
+            display: flex;
+            align-items: center;
+            text-align: left;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .text-content {
+            margin-right: 50px;
+            text-align: center;
+        }
+        .text-content h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .text-content h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .text-content p {
+            font-size: 1em;
+            margin: 10px 0;
+        }
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #f5c32c;
+            background: url('IMG-20240922-WA0012.jpg') no-repeat center center;
+            background-size: cover;
+            box-shadow: 0 0 20px 5px rgba(245, 195, 44, 0.5);
+        }
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            .text-content {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            .navbar .menu {
+                gap: 30px; /* Increase the gap between menu items on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Nopal :]</div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Blog</a>
+        </div>
+        <div class="github">
+            <i class="fab fa-github"></i>
+        </div>
+    </div>
+    <div class="content">
+        <div class="text-content">
+            <h1>Naufal Athallah</h1>
+            <h2>Bukan Full-stack Developer</h2>
+            <p>Welcome to my personal website</p>
+        </div>
+        <div class="profile-pic" alt="Profile picture of a person with glasses and a blue shirt"></div>
+    </div>
+</body>
+</html>
