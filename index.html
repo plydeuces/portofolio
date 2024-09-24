@@ -1,9 +1,11 @@
 <html>
 <head>
-    <title>Personal Website</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="10219080_curriculum_vitae_cv_portofolio_resume_icon.png" type="image/png">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
         body {
@@ -27,11 +29,35 @@
             align-items: center;
             padding: 20px 50px;
             background-color: #0d0d0d;
+            animation: shine 2s infinite;
+        }
+        @keyframes shine {
+            0% {
+                background-color: #0d0d0d;
+            }
+            50% {
+                background-color: #141414;
+            }
+            100% {
+                background-color: #0d0d0d;
+            }
         }
         .navbar .logo {
             font-size: 1.2em;
             color: #eec857;
-            margin-left: 50px; /* Menambahkan margin kiri untuk memindahkan logo lebih ke kanan */
+            margin-left: 50px;
+            animation: glow 2s infinite;
+        }
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #eec857;
+            }
+            50% {
+                text-shadow: 0 0 20px #eec857;
+            }
+            100% {
+                text-shadow: 0 0 10px #eec857;
+            }
         }
         .navbar .menu {
             display: flex;
@@ -42,7 +68,21 @@
             text-decoration: none;
             font-size: 1em;
             position: relative;
-            padding: 10px; /* Add some padding to the menu items */
+            padding: 10px;
+            animation: fade-in 2s;
+            transition: all 0.3s ease;
+        }
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .navbar .menu a:hover {
+            color: #eec857;
+            text-shadow: 0 0 10px #eec857;
         }
         .navbar .menu a:hover::after {
             content: '';
@@ -56,7 +96,16 @@
         .navbar .github {
             font-size: 1.5em;
             color: #ffffff;
-            margin-right: 20px; /* Menambahkan margin kanan untuk memindahkan ikon GitHub lebih ke kiri */
+            margin-right: 20px;
+            animation: spin 2s infinite;
+        }
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
         }
         .content {
             display: flex;
@@ -99,14 +148,34 @@
                 margin-bottom: 20px;
             }
             .navbar .menu {
-                gap: 30px; /* Increase the gap between menu items on smaller screens */
+                gap: 1px;
+            }
+ .text-content h1 {
+                font-size: 1.8em;
+            }
+            .text-content h2 {
+                font-size: 1.2em;
+            }
+            .text-content p {
+                font-size: 0.9em;
+            }
+            .profile-pic {
+                width: 200px;
+                height: 200px;
+            }
+            .navbar .logo {
+                font-size: 1em;
+                margin-left: 10px;
+            }
+            .navbar .menu a {
+                font-size: 0.9em;
             }
         }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <div class="logo">Nopal :]</div>
+        <div class="logo"> <b> Nopal :]</b></div>
         <div class="menu">
             <a href="#">Home</a>
             <a href="#">About</a>
@@ -123,7 +192,11 @@
             <h2>Bukan Full-stack Developer</h2>
             <p>Welcome to my personal website</p>
         </div>
-        <div class="profile-pic" alt="Profile picture of a person with glasses and a blue shirt"></div>
+        <div class="profile-pic" alt="Profile picture of a person with glasses and a blue shirt" data-aos="fade-left" data-aos-duration="1000" ></div>
     </div>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 </body>
 </html>
