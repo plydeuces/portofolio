@@ -200,50 +200,92 @@
             color: #b0b0b0;
         }
         .projects {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        .project-card {
-            background-color: #2a2a2a;
-            border-radius: 10px;
-            width: 300px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .project-card img {
-            width: 100%;
-            border-radius: 10px;
-            background-size: cover;
-            background-position: center;
-        }
-        .project-card h3 {
-            font-size: 22px;
-            margin: 15px 0 10px;
-        }
-        .project-card p {
-            font-size: 16px;
-            color: #b0b0b0;
-        }
-        .project-card .tech {
-            font-size: 14px;
-            color: #f0c040;
-            margin-top: 10px;
-        }
-        .project-card .icons {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 10px;
-        }
-        .project-card .icons a {
-            color: #e0e0e0;
-            margin-left: 10px;
-            font-size: 18px;
-        }
-        .project-card .icons a:hover {
-            color: #f0c040;
-        }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.project-card {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  width: 300px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease-in-out;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.project-card img:hover {
+  opacity: 0.8;
+}
+
+.project-card h3 {
+  font-size: 22px;
+  margin: 15px 0 10px;
+  transition: color 0.5s ease-in-out;
+}
+
+.project-card h3:hover {
+  color: #eec857;
+}
+
+.project-card p {
+  font-size: 16px;
+  color: #b0b0b0;
+  transition: color 0.5s ease-in-out;
+}
+
+.project-card p:hover {
+  color: #eec857;
+}
+
+.project-card .tech {
+  font-size: 14px;
+  color: #f0c040;
+  margin-top: 10px;
+  transition: color 0.5s ease-in-out;
+}
+
+.project-card .tech:hover {
+  color: #eec857;
+}
+
+.project-card .icons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.project-card .icons:hover {
+  opacity: 0.8;
+}
+
+.project-card .icons a {
+  color: #e0e0e0;
+  margin-left: 10px;
+  font-size: 18px;
+  transition: color 0.5s ease-in-out;
+}
+
+.project-card .icons a:hover {
+  color: #eec857;
+}
+
+       
     </style>
 </head>
     <body>
@@ -388,6 +430,7 @@
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init();
+    
 </script>
 </body>
 </html>

@@ -31,6 +31,7 @@
             padding: 20px 50px;
             background-color: #0d0d0d;
             animation: shine 2s infinite;
+            z-index: 1000;
         }
 
         @keyframes shine {
@@ -214,24 +215,38 @@
         }
 
         .skills .tools .tool {
-            background-color: #2a2a2a;
-            border: 1px solid #f0c674;
-            height: 80px;
-            border-radius: 10px;
-            width: 150px;
-            text-align: center;
+    background-color: #2a2a2a;
+    border: 1px solid #f0c674;
+    height: 80px;
+    border-radius: 10px;
+    width: 150px;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                background-color 0.5s ease;
+}
 
-            margin-bottom: 20px;
-        }
+.skills .tools .tool:hover {
+    transform: scale(1.15); /* Slightly larger scaling for smooth effect */
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8); /* More pronounced glow */
+    background-color: #333333; /* Subtle background color change on hover */
+}
 
-        .skills .tools .tool i {
-            font-size: 24px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 1px;
-            margin-top: 15px;
-        }
+.skills .tools .tool i {
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1px;
+    margin-top: 15px;
+    transition: color 0.5s ease;
+}
+
+.skills .tools .tool:hover i {
+    color: #f0c674; /* Change the icon color on hover */
+}
+
 
         .section-title {
             display: flex;
