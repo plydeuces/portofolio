@@ -1,0 +1,392 @@
+<head>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="10219080_curriculum_vitae_cv_portofolio_resume_icon.png" type="image/png">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #0d0d0d;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #0d0d0d;
+            animation: shine 2s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                background-color: #0d0d0d;
+            }
+
+            50% {
+                background-color: #141414;
+            }
+
+            100% {
+                background-color: #0d0d0d;
+            }
+        }
+
+        .navbar .logo {
+            font-size: 1.2em;
+            color: #eec857;
+            margin-left: 50px;
+            animation: glow 2s infinite;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #eec857;
+            }
+
+            50% {
+                text-shadow: 0 0 20px #eec857;
+            }
+
+            100% {
+                text-shadow: 0 0 10px #eec857;
+            }
+        }
+
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1em;
+            position: relative;
+            padding: 10px;
+            animation: fade-in 2s;
+            transition: all 0.3s ease;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .navbar .menu a:hover {
+            color: #eec857;
+            text-shadow: 0 0 10px #eec857;
+        }
+
+        .navbar .menu a:hover::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #f5c32c;
+            bottom: -5px;
+            left: 0;
+        }
+
+        .navbar .github {
+            font-size: 1.5em;
+            color: #ffffff;
+            margin-right: 20px;
+            animation: spin 2s infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            .about {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .about img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .navbar .menu {
+                gap: 1px;
+            }
+
+            .navbar .logo {
+                font-size: 1em;
+                margin-left: 10px;
+            }
+
+            .navbar .menu a {
+                font-size: 0.9em;
+            }
+            .main-title h1 {
+                font-size: 24px;
+            }
+            .main-title p {
+                font-size: 14px;
+            }
+            .project-card {
+                padding: 15px;
+            }
+            .project-card h3 {
+                font-size: 20px;
+            }
+            .project-card p {
+                font-size: 14px;
+            }
+            .project-card .tech {
+                font-size: 12px;
+            }
+            .project-card .icons a {
+                font-size: 16px;
+            }
+        }
+        
+
+    
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .main-title {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .main-title h1 {
+            font-size: 36px;
+            color: #f0c040;
+        }
+        .main-title p {
+            font-size: 18px;
+            color: #b0b0b0;
+        }
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .project-card {
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            width: 300px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .project-card img {
+            width: 100%;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+        }
+        .project-card h3 {
+            font-size: 22px;
+            margin: 15px 0 10px;
+        }
+        .project-card p {
+            font-size: 16px;
+            color: #b0b0b0;
+        }
+        .project-card .tech {
+            font-size: 14px;
+            color: #f0c040;
+            margin-top: 10px;
+        }
+        .project-card .icons {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+        }
+        .project-card .icons a {
+            color: #e0e0e0;
+            margin-left: 10px;
+            font-size: 18px;
+        }
+        .project-card .icons a:hover {
+            color: #f0c040;
+        }
+    </style>
+</head>
+    <body>
+        <div class="navbar">
+            <div class="logo"> <b> Nopal :]</b></div>
+            <div class="menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="portofolio.html">Portfolio</a>
+                <a href="#">Blog</a>
+            </div>
+            <div class="github">
+                <i class="fab fa-github"></i>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="header">
+            </div>
+            <div class="main-title">
+             <h1>
+              Past Project Experience
+             </h1>
+             <p>
+              Explore the projects I've worked on so far
+             </p>
+            </div>
+            <div class="projects">
+             <div class="project-card">
+              <img alt="Screenshot of Personal Website project" height="160" src="Screenshot 2024-09-26 100434.png" width="300"/>
+              <h3>
+               Personal Website
+              </h3>
+              <p>
+               My personal website, I created this website to display my profile, skills and projects. As well as my place to try new technology.
+              </p>
+              <div class="tech">
+               VueJS 3, Tailwind
+              </div>
+              <div class="icons">
+               <a href="#">
+                <i class="fas fa-link">
+                </i>
+               </a>
+               <a href="#">
+                <i class="fas fa-code">
+                </i>
+               </a>
+              </div>
+             </div>
+             <div class="project-card">
+              <img alt="Screenshot of Sahabat Muslim project" height="160" src="Screenshot 2024-09-26 100458.png" width="300"/>
+              <h3>
+               Sahabat Muslim
+              </h3>
+              <p>
+               A website that has a responsive display to make it easier for Muslims to read the Quran from anywhere.
+              </p>
+              <div class="tech">
+               VueJS 3, Tailwind
+              </div>
+              <div class="icons">
+               <a href="#">
+                <i class="fas fa-link">
+                </i>
+               </a>
+               <a href="#">
+                <i class="fas fa-code">
+                </i>
+               </a>
+              </div>
+             </div>
+             <div class="project-card">
+              <img alt="Screenshot of SISTEKDES project" height="160" src="Screenshot 2024-09-26 100609.png" width="300"/>
+              <h3>
+               SISTEKDES
+              </h3>
+              <p>
+               Sistem Informasi dan Teknologi Desa, a web application to assist village government work in administration, population data management, community services, etc.
+              </p>
+              <div class="tech">
+               Laravel 9, Bootstrap
+              </div>
+              <div class="icons">
+               <a href="#">
+                <i class="fas fa-link">
+                </i>
+               </a>
+               <a href="#">
+                <i class="fas fa-code">
+                </i>
+               </a>
+              </div>
+             </div>
+             <div class="project-card">
+              <img alt="Screenshot of Bumdesma project" height="160" src="Screenshot 2024-09-26 100434.png" width="300"/>
+              <h3>
+               Bumdesma
+              </h3>
+              <p>
+               A web application used by village-owned enterprises at the sub-district level to make it easier for them in terms of accounting that is equipped with a microfinance balance.
+              </p>
+              <div class="tech">
+               Laravel 9, Bootstrap
+              </div>
+              <div class="icons">
+               <a href="#">
+                <i class="fas fa-link">
+                </i>
+               </a>
+               <a href="#">
+                <i class="fas fa-code">
+                </i>
+               </a>
+              </div>
+             </div>
+             <div class="project-card">
+              <img alt="Screenshot of SP2SE project" height="160" src="Screenshot 2024-09-26 100458.png" width="300"/>
+              <h3>
+               SP2SE
+              </h3>
+              <p>
+               Sistem Percepatan Pelayanan Surat Elektronik, a web application to manage letters in the village.
+              </p>
+              <div class="tech">
+               Codeigniter 3, Bootstrap
+              </div>
+              <div class="icons">
+               <a href="#">
+                <i class="fas fa-link">
+                </i>
+               </a>
+               <a href="#">
+                <i class="fas fa-code">
+                </i>
+               </a>
+              </div>
+             </div>
+            </div>
+           </div>
+        
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+</body>
+</html>
