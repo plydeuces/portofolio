@@ -1,369 +1,392 @@
 <html>
-
-<head>
+  <head>
     <title>Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="10219080_curriculum_vitae_cv_portofolio_resume_icon.png" type="image/png">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="10219080_curriculum_vitae_cv_portofolio_resume_icon.png"
+      type="image/png"
+    />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
 
     <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #0d0d0d;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
+      body {
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+        background-color: #0d0d0d;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+      }
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+        background-color: #0d0d0d;
+        animation: shine 2s infinite;
+        z-index: 1000;
+      }
+
+      @keyframes shine {
+        0% {
+          background-color: #0d0d0d;
         }
 
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background-color: #0d0d0d;
-            animation: shine 2s infinite;
-            z-index: 1000;
+        50% {
+          background-color: #141414;
         }
 
-        @keyframes shine {
-            0% {
-                background-color: #0d0d0d;
-            }
+        100% {
+          background-color: #0d0d0d;
+        }
+      }
 
-            50% {
-                background-color: #141414;
-            }
+      .navbar .logo {
+        font-size: 1.2em;
+        color: #eec857;
+        margin-left: 50px;
+        animation: glow 2s infinite;
+      }
 
-            100% {
-                background-color: #0d0d0d;
-            }
+      @keyframes glow {
+        0% {
+          text-shadow: 0 0 10px #eec857;
         }
 
-        .navbar .logo {
-            font-size: 1.2em;
-            color: #eec857;
-            margin-left: 50px;
-            animation: glow 2s infinite;
+        50% {
+          text-shadow: 0 0 20px #eec857;
         }
 
-        @keyframes glow {
-            0% {
-                text-shadow: 0 0 10px #eec857;
-            }
+        100% {
+          text-shadow: 0 0 10px #eec857;
+        }
+      }
 
-            50% {
-                text-shadow: 0 0 20px #eec857;
-            }
+      .navbar .menu {
+        display: flex;
+        gap: 20px;
+      }
 
-            100% {
-                text-shadow: 0 0 10px #eec857;
-            }
+      .navbar .menu a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1em;
+        position: relative;
+        padding: 10px;
+        animation: fade-in 2s;
+        transition: all 0.3s ease;
+      }
+
+      @keyframes fade-in {
+        0% {
+          opacity: 0;
         }
 
-        .navbar .menu {
-            display: flex;
-            gap: 20px;
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .navbar .menu a:hover {
+        color: #eec857;
+        text-shadow: 0 0 10px #eec857;
+      }
+
+      .navbar .menu a:hover::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #f5c32c;
+        bottom: -5px;
+        left: 0;
+      }
+
+      .navbar .github {
+        font-size: 1.5em;
+        color: #ffffff;
+        margin-right: 20px;
+        animation: spin 2s infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
         }
 
-        .navbar .menu a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1em;
-            position: relative;
-            padding: 10px;
-            animation: fade-in 2s;
-            transition: all 0.3s ease;
+        100% {
+          transform: rotate(360deg);
         }
+      }
 
-        @keyframes fade-in {
-            0% {
-                opacity: 0;
-            }
+      .container {
+        width: 80%;
+        margin: 100px auto;
+        padding-top: 20px;
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        padding: 20px;
+      }
 
-            100% {
-                opacity: 1;
-            }
-        }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+      }
 
-        .navbar .menu a:hover {
-            color: #eec857;
-            text-shadow: 0 0 10px #eec857;
-        }
+      .header h1 {
+        color: #f0c674;
+        font-size: 24px;
+      }
 
-        .navbar .menu a:hover::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: #f5c32c;
-            bottom: -5px;
-            left: 0;
-        }
+      .card {
+        background-color: #2a2a2a;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 40px;
+      }
 
-        .navbar .github {
-            font-size: 1.5em;
-            color: #ffffff;
-            margin-right: 20px;
-            animation: spin 2s infinite;
-        }
+      .about {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
 
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
+      .about img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        margin-right: 20px;
+      }
 
-            100% {
-                transform: rotate(360deg);
-            }
-        }
+      .about p {
+        font-size: 16px;
+        line-height: 1.6;
+      }
 
+      .skills {
+        margin-top: 40px;
+        text-align: center;
+      }
+
+      .skills h2 {
+        color: #f0c674;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .skills .tabs {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .skills .tabs button {
+        background-color: #2a2a2a;
+        color: #d4d4d4;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .skills .tabs button.active {
+        background-color: #f0c674;
+        color: #1a1a1a;
+      }
+
+      .skills .tools {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .skills .tools .tool {
+        background-color: #2a2a2a;
+        border: 1px solid #f0c674;
+        height: 80px;
+        border-radius: 10px;
+        width: 150px;
+        text-align: center;
+        margin-bottom: 20px;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+          background-color 0.5s ease;
+      }
+
+      .skills .tools .tool:hover {
+        transform: scale(1.15); /* Slightly larger scaling for smooth effect */
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.8); /* More pronounced glow */
+        background-color: #333333; /* Subtle background color change on hover */
+      }
+
+      .skills .tools .tool i {
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1px;
+        margin-top: 15px;
+        transition: color 0.5s ease;
+      }
+
+      .skills .tools .tool:hover i {
+        color: #f0c674; /* Change the icon color on hover */
+      }
+
+      .section-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .section-title h2 {
+        margin: 0;
+        margin-right: 10px;
+      }
+
+      .section-title .line {
+        flex-grow: 1;
+        height: 2px;
+        background-color: #f0c674;
+      }
+
+      @media (max-width: 768px) {
         .container {
-            width: 80%;
-            margin: 100px auto;
-            padding-top: 20px;
-            background-color: #1a1a1a;
-            border-radius: 10px;
-            padding: 20px;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-        }
-
-        .header h1 {
-            color: #f0c674;
-            font-size: 24px;
-        }
-
-        .card {
-            background-color: #2a2a2a;
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 40px;
+          width: 90%;
         }
 
         .about {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
         }
 
         .about img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            margin-right: 20px;
+          margin-right: 0;
+          margin-bottom: 20px;
         }
 
-        .about p {
-            font-size: 16px;
-            line-height: 1.6;
+        .navbar .menu {
+          gap: 1px;
         }
 
-        .skills {
-            margin-top: 40px;
-            text-align: center;
+        .navbar .logo {
+          font-size: 1em;
+          margin-left: 10px;
         }
 
-        .skills h2 {
-            color: #f0c674;
-            font-size: 24px;
-            margin-bottom: 10px;
+        .navbar .menu a {
+          font-size: 0.9em;
         }
-
-        .skills .tabs {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            align-items: center;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .skills .tabs button {
-            background-color: #2a2a2a;
-            color: #d4d4d4;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .skills .tabs button.active {
-            background-color: #f0c674;
-            color: #1a1a1a;
-        }
-
-        .skills .tools {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .skills .tools .tool {
-    background-color: #2a2a2a;
-    border: 1px solid #f0c674;
-    height: 80px;
-    border-radius: 10px;
-    width: 150px;
-    text-align: center;
-    margin-bottom: 20px;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
-                box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
-                background-color 0.5s ease;
-}
-
-.skills .tools .tool:hover {
-    transform: scale(1.15); /* Slightly larger scaling for smooth effect */
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8); /* More pronounced glow */
-    background-color: #333333; /* Subtle background color change on hover */
-}
-
-.skills .tools .tool i {
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1px;
-    margin-top: 15px;
-    transition: color 0.5s ease;
-}
-
-.skills .tools .tool:hover i {
-    color: #f0c674; /* Change the icon color on hover */
-}
-
-
-        .section-title {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .section-title h2 {
-            margin: 0;
-            margin-right: 10px;
-        }
-
-        .section-title .line {
-            flex-grow: 1;
-            height: 2px;
-            background-color: #f0c674;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                width: 90%;
-            }
-
-            .about {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .about img {
-                margin-right: 0;
-                margin-bottom: 20px;
-            }
-
-            .navbar .menu {
-                gap: 1px;
-            }
-
-            .navbar .logo {
-                font-size: 1em;
-                margin-left: 10px;
-            }
-
-            .navbar .menu a {
-                font-size: 0.9em;
-            }
-            
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="navbar">
-        <div class="logo"><b>Nopal :]</b></div>
-        <div class="menu">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="portofolio.html">Portfolio</a>
-            
-        </div>
-        <div class="github">
-            <i class="fab fa-github"></i>
-        </div>
+      <div class="logo"><b>Nopal :]</b></div>
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portofolio.html">Portfolio</a>
+      </div>
+      <div class="github">
+        <i class="fab fa-github"></i>
+      </div>
     </div>
 
     <div class="container">
-        <div class="header">
-        
-        </div>
+      <div class="header"></div>
 
-        <div class="card">
-            <div class="section-title">
-                <h2>About Me</h2>
-                <div class="line"></div>
-            </div>
-            <div class="about">
-                <img src="WhatsApp Image 2024-09-24 at 22.26.54_0157d4ae.jpg"
-                    alt="Cartoon image of a person with glasses and a blue scarf" width="150" height="150"  data-aos="fade-right" data-aos-duration="1000">
-                <div>
-                    <p  data-aos="fade-left" data-aos-duration="1000">haloo semuaanyaa! nama dia naufal athallah satrio.
-                        dia memiliki 1 sodara laki laki dan dia sangat senang bermain game,game apapun itu pasti dia mainkan. naufal memiliki cara yang unik untuk menunjukkan rasa sedih mungkin tidak dengan kata kata manis,tetapi melalui tindakan tindakan yg memang tidak terduga naufal sering menjahili orang lain membuat orang di sekitar nya tertawa melihat tingkah laku nya namun di balik kejahilan dia kepada orang lain dia adalah sosok yang tulus. naufal selalu tau kapan harus serius,kapan harus memberikan dukungan penuh dan kapan aku butuh dia. setiap kali ada masalah saya selalu berbagi masalah saya kepada naufal,naufal selalu punya cara nya tersendiri untuk mengatasi masalah saya. disaat ada masalah dia selalu menyikapi nya dengan tenang dan santai.</p>
-                    <p  data-aos="fade-left" data-aos-duration="1500">  apa yang menjadikan naufal selalu istimewa? kemampuannya untuk selalu berusaha,dia selalu mengusahakan hal hal yang terbaik untung orang orang di sekitar nya sampai dia lupa bahwa dia juga manusia yang butuh mendapatkan feedback dri itu semua. naufal selalu bisa di andalkan dalam segala hal,dia mungkin selalu terlihat ceria dan santai tetapi di balik itu semua dia juga hanyalah sosok laki laki yang membutuhkan tempat cerita,dia selalu bisa di andalkan jika teman" nya atau orang terdekat nya membutuh kan dia.</p>
-                </div>
-            </div>
+      <div class="card">
+        <div class="section-title">
+          <h2>About Me</h2>
+          <div class="line"></div>
         </div>
+        <div class="about">
+          <img
+            src="WhatsApp Image 2024-09-24 at 22.26.54_0157d4ae.jpg"
+            alt="Cartoon image of a person with glasses and a blue scarf"
+            width="150"
+            height="150"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          />
+          <div>
+            <p data-aos="fade-left" data-aos-duration="1000">
+              I have gained valuable experience in the digital field, having
+              worked for 3 months in this industry. Currently, I am pursuing my
+              studies at SMK Taruna Bangsa, where I am actively enhancing my
+              knowledge and skills. Additionally, I have dedicated approximately
+              6 months to learning and exploring the intricacies of the Google
+              Cloud Platform (GCP).
+            </p>
+            <p data-aos="fade-left" data-aos-duration="1500">
+              These experiences have provided me with a solid foundation and a
+              strong understanding of digital technologies and cloud computing.
+              I also have a keen interest in developing networking skills. I am
+              eager to apply my expertise and continue growing in the dynamic
+              and evolving world of digital innovation.
+            </p>
+          </div>
+        </div>
+      </div>
 
-        <div class="skills">
-            <h2>Skills</h2>
-            <div class="tabs">
-                
-                <button class="active">Tools</button>
-            </div>
-            <div class="tools">
-                <div class="tool" data-aos="fade-up" data-aos-duration="1000">
-                    <i class="fab fa-git-alt"></i>
-                    <p>Git</p>
-                </div>
-                <div class="tool" data-aos="fade-up" data-aos-duration="1000">
-                    <i class="fab fa-github"></i>
-                    <p>GitHub</p>
-                </div>
-                <div class="tool" data-aos="fade-up" data-aos-duration="1000">
-                    <i class="fab fa-npm"></i>
-                    <p>NPM</p>
-                </div>
-                <div class="tool" data-aos="fade-up" data-aos-duration="1000">
-                    <i class="fas fa-database"></i>
-                    <p>MySQL</p>
-                </div>
-            </div>
+      <div class="skills">
+        <h2>Skills</h2>
+        <div class="tabs">
+          <button class="active">Tools</button>
         </div>
+        <div class="tools">
+          <div class="tool" data-aos="fade-up" data-aos-duration="1000">
+            <i class="fab fa-git-alt"></i>
+            <p>Git</p>
+          </div>
+          <div class="tool" data-aos="fade-up" data-aos-duration="1000">
+            <i class="fab fa-github"></i>
+            <p>GitHub</p>
+          </div>
+          <div class="tool" data-aos="fade-up" data-aos-duration="1000">
+            <i class="fab fa-npm"></i>
+            <p>NPM</p>
+          </div>
+          <div class="tool" data-aos="fade-up" data-aos-duration="1000">
+            <i class="fas fa-database"></i>
+            <p>MySQL</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init();
+      AOS.init();
     </script>
-</body>
-
+  </body>
 </html>
